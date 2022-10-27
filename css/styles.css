@@ -7,9 +7,14 @@
   --additional-color: rgba(255, 255, 255, 0.6);
   --accent-color: #2196f3;
   --secondary-accent-color: #188ce8;
+  --modal-form-color: rgba(117, 117, 117, 0.5);
+  --text-field-color:#000000;
+  
   /*  рамка */
   --primary-border-color: #eeeeee;
   --secondary-border-color: #ececec;
+  --modal-btn-border-color:rgba(0, 0, 0, 0.1);
+  --modal-form-border-color: rgba(33, 33, 33, 0.2);
 
   /* фон */
   --primary-background-color: #ffffff;
@@ -26,7 +31,7 @@
   --primary-font-family: 'Roboto', sans-serif;
   --secondary-font-family: 'Raleway', sans-serif;
   /* переходы */
-  --transition-dur-and-func: 1250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -588,10 +593,6 @@ address {
 .portfolio-item-clients-link:focus .overlay {
       transform: translateY(0%);
 }
-
-  
-
-
 /* ///////////////////////////////////////////// */
 /*    ///   modal-window   ///    */
 .backdrop{
@@ -617,6 +618,7 @@ address {
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
+  padding: 40px;
   background-color: var(--primary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -633,5 +635,100 @@ address {
   padding: 0; 
   background-color: var(--primary-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
+} 
+.close-button-icon{
+  transition: fill var(--transition-dur-and-func);
+}  
+  .modal-close-btn:hover{
+    fill: var(--accent-color);
+  }
+/* ////////////////////////////////////////////////// */
+               /*    ///   form   ///    */
+ 
+.modal-form-title{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+.field-wrapper {
+  margin-bottom: 20px;
+}
+.modal-form-field{
+  display: block;
+ color: var(--text-field-color);
+}
+.modal-form-field:not(:last-child) {
+  margin-bottom: 10px;
+}
+.modal-form-field-desc{
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+}
+.modal-form-field-wrapper{
+  position: relative;
+  display: block;
+}
+.modal-form-input{   
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--modal-form-border-color);
+  border-radius: 4px;
+  padding-left: 42px;
+  transition: border-color var(--transition-dur-and-func);
+}
+.modal-form-input:focus{
+  outline: none;
+  border-color: var(--accent-color);
+}
+.modal-form-input-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  fill: var(--primary-color);
+  transition: fill var(--transition-dur-and-func);
+}
+.modal-form-input:focus + .modal-form-input-icon{
+  fill: var(--accent-color);
+}
+/* //////////// */
+.modal-form-message {  
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid var(--modal-form-border-color);
+  border-radius: 4px;
+  resize: none;
+  transition: border-color var(--transition-dur-and-func);
+}
+.modal-form-message::placeholder{
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color:var(--modal-form-color);
+}
+.modal-form-message:focus{
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* .modal-form-check-field{
+  display: block;
+} */
+
+
+.modal-form-check{
+  font-size: 12px;
+  line-height: 1.17;
+   letter-spacing: 0.01em;  
+   color: var(--modal-form-color);
+}
+.modal-form-submit{
+  display: block;
 }
