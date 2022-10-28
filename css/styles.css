@@ -460,7 +460,11 @@ address {
 .footer-container{
   display: flex;  
   align-items: baseline;
-  gap: 70px;
+  /* gap: 70px; */
+}
+.footer-address-wrapper{
+  /* width: 231px; */
+  margin-right: 70px;
 }
 .address {
   margin-top: 20px;
@@ -505,8 +509,15 @@ address {
 .footer-social-link:focus{
   background-color: var(--accent-color);
 }
+
+/* ////////////////////////////////////////// */
+
 .footer-subscription-text{
   margin-bottom: 20px;
+}
+.footer-subscription-wrapper {
+  display: flex;
+  align-items: center;
 }
 .footer-subscription-form-input{
   width: 358px;
@@ -518,7 +529,7 @@ address {
 
 
   border: 1px solid rgba(255, 255, 255, 0.3);
-    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
 }
 .footer-subscription-form-input::placeholder {
@@ -531,29 +542,24 @@ address {
 .footer-subscription-form-input:focus {
   outline: none;  
 }
-.footer-subscription-button{
-  margin-left: 12px;
-}
-.footer-subscription-wrapper{
+.footer-subscription-button{ 
   display: flex;
   align-items: center;
+  margin-left: 12px;
+  min-height: 50px;
+  min-width: 200px;
+  padding: 10px 28px;
+  margin-top: 0; 
+  border: none; 
+}
+.footer-subscription-button-icon{
+  margin-left: 10px;
 }
 
 
 
 
-/* .current {  
-  color: var(--accent-color);
-}
-.current::after{
-  position: absolute;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 4px;
-  bottom: 0; 
-  background-color: var(--accent-color);
-} */
+
 /* ///////////////////////////////////////////// */
 /*    ///   portfolio   ///    */
 
@@ -779,7 +785,8 @@ address {
   margin-right: 7px; 
   border: 2px solid var(--primary-color);
   border-radius: 4%;
-  
+  transition: background-color var(--transition-dur-and-func),
+              border-color var(--transition-dur-and-func); 
 }
 .modal-form-own-checkbox-icon{
  display: none; 
@@ -794,9 +801,8 @@ address {
  
 }
 .modal-form-check:focus + .modal-form-own-checkbox{
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
-      0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 
 }
 .checkbox-link{
@@ -812,6 +818,7 @@ address {
   padding: 10px 52px;  
   margin-left: auto;
   margin-right: auto;
+  
 } 
 
 

@@ -822,17 +822,29 @@
                 class="footer-subscription-form-input"
                 name="user_email"
                 placeholder="E-mail"
+                required
               />
             </form>
             <button
+              type="submit"
               class="footer-subscription-button button button-primary"
-            ></button>
+            >
+              Підписатися<svg
+                lang="uk"
+                aria-label="іконка літачка"
+                class="footer-subscription-button-icon"
+                width="24"
+                height="24"
+              >
+                <use href="./images/sprite.svg#icon-send"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </footer>
 
-    <div class="backdrop" is-hidden data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button
           type="button"
