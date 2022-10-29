@@ -764,7 +764,7 @@ address {
   border-color: var(--accent-color);
 }
 /*////////////////////////////////////////////// */
-.modal-form-check-field{
+.footer-subscription-form{
   display: flex;
   align-items: center;
   justify-content: center;
