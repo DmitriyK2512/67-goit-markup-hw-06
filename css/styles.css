@@ -511,6 +511,15 @@ address {
 }
 
 /* ////////////////////////////////////////// */
+.footer-subscription-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+}
 
 .footer-subscription-text{
   margin-bottom: 20px;
@@ -638,6 +647,8 @@ address {
 }
 /* ///////////////////////////////////////////// */
 /*    ///   modal-window   ///    */
+/* ............................ */
+/* Затемненный задний фон */
 .backdrop{
   position: fixed;
   top: 0;
@@ -649,11 +660,15 @@ address {
   transition: opacity var(--transition-dur-and-func),
               visibility var(--transition-dur-and-func);
 }
+/* ................................................. */
+/* Скрываем фон */
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
+/* .................................................... */
+/* модальное окно */
 .modal{
   position: absolute;
   top: 50%;
@@ -665,7 +680,9 @@ address {
   background-color: var(--primary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-} 
+}
+ /*......................................  */
+ /* кнопка модального окна */
 .modal-close-btn{
   position: absolute;
   top: 8px;
@@ -683,12 +700,21 @@ address {
 .close-button-icon{
   transition: fill var(--transition-dur-and-func);
 }  
-  .modal-close-btn:hover{
+  .modal-close-btn:hover > .close-button-icon,
+  .modal-close-btn:focus > .close-button-icon{
     fill: var(--accent-color);
-  }
+    outline: none;
+    border-color: var(--accent-color);
+ }
+ .modal-close-btn:focus{
+   outline: none;
+   border-color: var(--accent-color);
+ }
+   
+
 /* ////////////////////////////////////////////////// */
                /*    ///   form   ///    */
- 
+ /* Заголовок формы */
 .modal-form-title{
   font-weight: 700;
   font-size: 20px;
@@ -697,17 +723,19 @@ address {
   letter-spacing: 0.03em;
   margin-bottom: 12px;
 }
+/* обертка для задания мазжина от чекбокса */
 .field-wrapper {
   margin-bottom: 20px;
 }
+/* поля для данных с отступами */
 .modal-form-field{
   display: block;
-  color: var(--text-field-color);
-  
+  color: var(--text-field-color);  
 }
 .modal-form-field:not(:last-child) {
   margin-bottom: 10px;
 }
+/* Спан для названий форм */
 .modal-form-field-desc{
   display: block;
   font-size: 12px;
@@ -716,6 +744,7 @@ address {
   color: var(--secondary-color);
   margin-bottom: 4px;
 }
+/* спан для ловли иконки */
 .modal-form-field-wrapper{
   position: relative;
   display: block;
@@ -765,15 +794,10 @@ address {
   border-color: var(--accent-color);
 }
 /*////////////////////////////////////////////// */
-.footer-subscription-form{
+.modal-form-check-field{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  line-height: 1.71;  
-  letter-spacing: 0.03em;
-  
-  color:var(--secondary-color);
 }
 .modal-form-check{
   position: absolute;
@@ -802,7 +826,7 @@ address {
  
 }
 .modal-form-check:focus + .modal-form-own-checkbox{
-  background-color: var(--accent-color);
+  /* background-color: var(--accent-color); */
   border-color: var(--accent-color);
 
 }
